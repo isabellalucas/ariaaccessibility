@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 5</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- menu  -->
+    <script src="aria-menu.js" charset="utf-8"></script>
+    <!-- Image generator -->
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var gallery = $('#image-gallery');
+
+        for (i = 0; i < 10; i++) {
+          var random = Math.round(Math.random() * 16);
+
+          gallery.append($('<img>').attr('src', 'photo' + random + '.jpg'));
+        }
+      });
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="icomoon/style.css" />
+    <!-- <link rel="stylesheet" href="icomoon-spinner/style.css" /> -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Assignment 5: ARIA and Accessibility</h1>
+
+        <nav>
+          <!-- This could be a button - aria-controls is optional
+          - tabindex="-1" means the item can be focused, but not tabbed to.
+        -->
+          <a
+            role="button"
+            aria-haspopup="true"
+            aria-controls="main-menu"
+            href="#"
+            >Menu</a
+          >
+
+          <ul role="menu" aria-labelledby="menu-button" id="main-menu">
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1" name="teste">Potatoes</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Swiss Chard</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Beets</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Carrots</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Turnips</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="image-generator">
+          <h2>Random Unsplash Image Generator</h2>
+
+          <form method="GET">
+            <label>
+              Enter the subject for your new image (use commas to separate
+              multiple subjects):
+              <input type="text" name="subject" value="" />
+            </label>
+
+            <input type="submit" value="Generate" />
+
+            <button type="button" class="add">Add to Gallery</button>
+          </form>
+
+          <div class="image-container loaded">
+            <img
+              src="https://source.unsplash.com/400x250/"
+              alt="Randomly Generated Image"
+            />
+          </div>
+        </div>
+
+        <section id="image-gallery">
+          <h2>Image Gallery</h2>
+        </section>
+
+        <div class="image-generator">
+          <h2>Random Unsplash Image Generator</h2>
+
+          <form method="GET">
+            <label>
+              Enter the subject for your new image (use commas to separate
+              multiple subjects):
+              <input type="text" name="subject" value="" />
+            </label>
+
+            <input type="submit" value="Generate" />
+
+            <button type="button" class="add">Add to Gallery</button>
+          </form>
+
+          <div class="image-container loaded">
+            <img
+              src="https://source.unsplash.com/400x250/"
+              alt="Randomly Generated Image"
+            />
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <nav>
+          <!-- This could be a button - aria-controls is optional
+          - tabindex="-1" means the item can be focused, but not tabbed to.
+        -->
+          <a
+            role="button"
+            aria-haspopup="true"
+            aria-controls="secondary-menu"
+            href="#"
+            >Menu</a
+          >
+
+          <ul role="menu" aria-labelledby="menu-button" id="secondary-menu">
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Potatoes</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Swiss Chard</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Beets</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Carrots</a>
+            </li>
+
+            <li role="none presentation">
+              <a href="page.html" role="menuitem" tabindex="-1">Turnips</a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>
